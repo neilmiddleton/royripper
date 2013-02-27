@@ -1,0 +1,20 @@
+---
+title: Online recruitment training videos
+---
+
+- videos = Psych.load(File.new(File.expand_path("../videos.yaml",__FILE__), "r"))
+
+- wrap_layout :application do
+  #container
+    .content
+      %h1
+        %span Roy Ripper
+      %h2 World-class recruitment learning
+      %h3= data.page.title
+    #videos
+      - videos.each do |video|
+        #video
+          %iframe{width: 273, height: 220, src: video["url"], frameborder: 0, allowfullscreen: true}
+          %h4= video["title"]
+    .clear
+

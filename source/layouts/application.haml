@@ -1,0 +1,44 @@
+!!! Strict
+
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{:content => "IE=edge,chrome=1", :"http-equiv" => "X-UA-Compatible"}
+    %meta{:content => 'width=device-width,initial-scale=1.0,maximum-scale=1.0', :name => 'viewport'}
+    %title
+      = data.page.title || "Roy Ripper"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Signika:400,600"
+    = stylesheet_link_tag "all"
+
+  %body
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=206053436126407";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    #header
+      #intro
+        #tel +44 (0)845 600 3990
+        #email
+          %a{href:"mailto:info@royripper.com"}info@royripper.com
+      #nav
+        %ul
+          %li
+            %a{href: '/'} Home
+          %li
+            %a{href: '/videos'} Videos
+    .clear
+    = yield
+    #footer
+      Roy Ripper provides recruitment training for recruitment businesses all over the world via his in-house programmes, live seminars and online video material.
+      %br
+      Ripper Recruiter Training Ltd. is registered in England and Wales.
+      %br
+      Registered address: Third Floor, 111 Charterhouse Street, London, EC1M 6AW
+      %br
+      Company number: 08259595   VAT number: 152 0381 46
